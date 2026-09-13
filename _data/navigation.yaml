@@ -1,0 +1,10 @@
+nav:
+  - title: Home
+    url: /
+    subnav:
+      - title: Service 1
+        url: /services/1/
+      - title: Service 2
+        url: /services/2/
+  - title: Contact Us
+    url: /contact-us/
