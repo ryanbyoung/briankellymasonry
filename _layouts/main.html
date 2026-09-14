@@ -2,13 +2,15 @@
 <html lang="en">
   <head>
     <title>{{ page.title }}</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+{% include meta.html %}<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <style>
       /* Custom sitewide styles - add to site.css eventually when you compress Bootstrap */
       /* Make room at the top for the fixed navbar and space at the bottom for Mobile Safari */
+      /* Make text lighter sitewide for light/dark mode */
       body {
         padding-top: 3.3rem;
-        padding-bottom: 6rem
+        padding-bottom: 6rem;
+        color: rgb(var(--bs-tertiary-color-rgb));
       }
 {% if page.url == '/' %}{% include home.css %}{% endif %}
     </style>
