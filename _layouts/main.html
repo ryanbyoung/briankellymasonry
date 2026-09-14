@@ -13,6 +13,10 @@
         padding-bottom: 6rem;
         color: rgb(var(--bs-tertiary-color-rgb));
       }
+      /* Remove phone number from nav on small devices */
+      @media (max-width: 576px) {
+        #phone-number { display: none }
+      }
 {% if page.url == '/' %}{% include home.css %}{% endif %}
     </style>
   </head>
