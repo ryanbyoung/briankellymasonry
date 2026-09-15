@@ -15,6 +15,10 @@
           height: 500px
         }
       }
+      /* Back to top style */
+      html {
+        scroll-behavior: smooth
+      }
       /* Dark/Light Mode Styles */
       .bd-placeholder-img {
         font-size: 1.125rem;
