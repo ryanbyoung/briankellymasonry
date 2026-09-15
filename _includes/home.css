@@ -12,7 +12,8 @@
           background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("images/home/hero.jpg");
           background-repeat: no-repeat;
           color: #f8f9fa;
-          height: 500px
+          height: 500px;
+          width: 1100px
         }
       }
       /* Back to top style */
