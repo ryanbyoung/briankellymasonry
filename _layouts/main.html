@@ -26,6 +26,7 @@
 {% if page.url == '/' %}{% include home.css %}{% endif %}    </style>
   </head>
   <body>
+    <div id="top-of-page"></div>
 {% include theme.html %}    <header data-bs-theme="dark">
 {% include nav.html nav=site.data.navigation.nav %}    </header>
     <main role="main">
@@ -33,7 +34,7 @@
 {{ content }}      </div>
       <footer class="container">
         <p class="float-end">
-          <a href="#">Back to top</a>
+          <a href="#top-of-page" class="back-to-top" aria-label="Back to top">Back to top</a>
         </p>
         <p>
           &copy; 2000–2026 Brian Kelly Masonry &middot; 
