@@ -26,12 +26,11 @@
 {% if page.url == '/' %}{% include home.css %}{% endif %}    </style>
   </head>
   <body>
-{% include theme.html %}<header data-bs-theme="dark">
-{% include nav.html nav=site.data.navigation.nav %}</header>
+{% include theme.html %}    <header data-bs-theme="dark">
+{% include nav.html nav=site.data.navigation.nav %}    </header>
     <main role="main">
       <div class="container">
-{{ content }}
-      </div>
+{{ content }}      </div>
       <footer class="container">
         <p class="float-end">
           <a href="#">Back to top</a>
@@ -45,6 +44,5 @@
     </main>
     <!-- Compress this in an include site.js -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-{% if page.url == '/contact-us/' %}{% include contact-us.html %}{% endif %}
-  </body>
+{% if page.url == '/contact-us/' %}{% include contact-us.html %}{% endif %}  </body>
 </html>
