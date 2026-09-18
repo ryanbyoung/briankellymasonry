@@ -15,7 +15,7 @@
             <ul class="navbar-nav me-auto mb-2 mb-sm-0">{% for item in include.nav %}
               <li class="nav-item ms-3"><a class="nav-link{% if item.url == page.url %} active{% endif %}" href="{{ item.url }}"{% if item.url == page.url %} aria-current="page"{% endif %}>{{ item.title }}{% if item.url == page.url %} <span class="visually-hidden">(current)</span>{% endif %}</a></li>{% if item.subnav %}
               <li class="nav-item dropdown ms-3">
-                <a aria-expanded="false" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" id="projectsDropdown" role="button">Hot Tubs</a>
+                <a aria-expanded="false" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" id="projectsDropdown" role="button">Services</a>
                 <ul class="dropdown-menu" aria-labelledby="projectsDropdown">{% for item in item.subnav %}
                   <li>
                     <a class="dropdown-item{% if item.url == page.url %} active{% endif %}" href="{{ item.url }}">{{ item.title }}</a>
