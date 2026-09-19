@@ -1,0 +1,25 @@
+      /* Sitewide styles - eventually compress Bootstrap here */
+      /* Back to top styles: smooth scrolling, adjust for top padding */
+      html {
+        scroll-behavior: smooth
+      }
+      #top {
+        scroll-padding-top: 3.3rem
+      }
+      /* Make room at the top for the fixed navbar and space at the bottom for Mobile Safari */
+      /* Add bottom border to nav */
+      /* Make text lighter sitewide for light/dark mode */
+      body {
+        padding-top: 3.3rem;
+        padding-bottom: 6rem;
+        color: rgb(var(--bs-tertiary-color-rgb));
+      }
+      nav {
+        border-bottom-color: gray;
+        border-bottom-style: solid;
+        border-bottom-width: thin;
+      }
+      /* Remove phone number from nav on small devices */
+      @media (max-width: 576px) {
+        #phone-number { display: none }
+      }
