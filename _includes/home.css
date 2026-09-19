@@ -15,6 +15,17 @@
           height: 500px
         }
       }
+      /* Contact form styles: spinner and alert */
+      .bi-arrow-clockwise-animate {
+        animation: spin .7s infinite linear;
+      }
+      @keyframes spin {
+        from { transform: scale(1) rotate(0deg); }
+        to { transform: scale(1) rotate(360deg); }
+      }
+      .alert {
+        display: none;
+      }
       /* Dark/Light Mode Styles */
       .bd-placeholder-img {
         font-size: 1.125rem;
