@@ -1,0 +1,57 @@
+      window.addEventListener('load', () => {
+        const phoneInput = document.querySelector('#phone');
+        phoneInput.addEventListener('keydown', disallowNonNumericInput);
+        phoneInput.addEventListener('keyup', formatToPhone);
+      });
+      const disallowNonNumericInput = (evt) => {
+        if (evt.ctrlKey) { return; }
+        if (evt.key.length > 1) { return; }
+        if (/[0-9.]/.test(evt.key)) { return; }
+        evt.preventDefault();
+      }
+      const formatToPhone = (evt) => {
+        const digits = evt.target.value.replace(/\D/g,'').substring(0,10);
+        const areaCode = digits.substring(0,3);
+        const prefix = digits.substring(3,6);
+        const suffix = digits.substring(6,10);
+        if(digits.length > 6) {evt.target.value = `(${areaCode})${prefix}-${suffix}`;}
+        else if(digits.length > 3) {evt.target.value = `(${areaCode})${prefix}`;}
+        else if(digits.length > 0) {evt.target.value = `(${areaCode}`;}
+      };
+      // Handle form
+      $(document).ready(function() {
+        $("#contact-form").submit(function(e) {
+          e.preventDefault();
+          $('#submit').prop('disabled',true);
+          var $form = $(e.target);
+          const url = 'https://script.google.com/macros/s/AKfycbwAuTTMOaTRwKZx3aySFeQ-wdW-jWep77SCfA6-5F3DfnyzZnPY0h4zfacmhzVk71I1/exec';
+          $('#submit').append($('<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z"/><path d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466z"/></svg>').addClass('bi bi-arrow-clockwise bi-arrow-clockwise-animate ms-1 mb-1'));
+          var formData = $form.serialize();
+          var xhr = $.ajax({
+            url: url,
+            method: 'GET',
+            data: formData,
+            dataType: 'json',
+            success: function(data) {
+              $('.bi-arrow-clockwise').remove();
+              $('#submit').blur();
+              $('.alert-success').show("slow");
+              $('#contact-form')[0].reset();
+              setTimeout(function() {
+                $('.alert-success').hide("slow");
+              }, 5000);
+              $('#submit').prop('disabled',false);
+            },
+            error: function(data) {
+              $('.bi-arrow-clockwise').remove();
+              $('#submit').blur();
+              $('.alert-danger').show();
+              $('#contact-form')[0].reset();
+              setTimeout(function() {
+                $('.alert-danger').hide("slow");
+              }, 5000);
+              $('#submit').prop('disabled',false);
+            }
+          });
+        });
+      });
