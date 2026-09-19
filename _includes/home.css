@@ -19,9 +19,9 @@
       html {
         scroll-behavior: smooth
       }
-      #top-of-page {
+      /*#top-of-page {
         scroll-margin-top: 3rem
-      }
+      }*/
       /* Dark/Light Mode Styles */
       .bd-placeholder-img {
         font-size: 1.125rem;
